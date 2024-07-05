@@ -18,6 +18,13 @@
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": {}
+    "paths": {
+      "@app/mongo": [
+        "libs/mongo/src"
+      ],
+      "@app/mongo/*": [
+        "libs/mongo/src/*"
+      ]
+    }
   }
 }
