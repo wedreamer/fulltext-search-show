@@ -12,6 +12,8 @@ docker compose -f docker-compose.yml up -d
 ```bash
 pnpm i
 pnpm start
+# sub-mongo-change
+nest start sub-mongo-change
 ```
 
 ## migration
