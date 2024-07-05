@@ -18,7 +18,7 @@ export class Book {
 
   // 应用不能新增, 改, 也不能查
   // t pipeline
-  @Prop({ required: true, type: String })
+  @Prop({ required: true, type: String, index: 'text' })
   readonly t?: string;
 }
 

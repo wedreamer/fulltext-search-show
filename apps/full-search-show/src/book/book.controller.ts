@@ -13,10 +13,14 @@ import { Model } from 'mongoose';
 export class BookController {
   constructor(@InjectModel(Book.name) private model: Model<Book>) {}
 
+  // curl = `curl  -X GET \
+  // 'http://127.0.0.1:3000/book/query?text=%E7%AE%A1%E7%90%86%E5%99%A8' \
+  // --header 'Accept: */*' \
+  // --header 'User-Agent: Thunder Client (https://www.thunderclient.com)'`;
   // query search
   @Get('query')
   async query(@Query('text') text: string): Promise<Book[]> {
-    if (text) throw new BadRequestException();
+    if (!text) throw new BadRequestException();
     const res = await this.model.find({ $text: { $search: text } });
     return res;
   }
