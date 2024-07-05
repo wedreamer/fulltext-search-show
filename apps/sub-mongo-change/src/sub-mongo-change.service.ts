@@ -41,6 +41,9 @@ export class SubMongoChangeService {
           // 一定包含
           const one = await model.findById(id);
           if (!one) return;
+          // TODO:
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           const t = splitword(one);
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-expect-error
@@ -65,6 +68,9 @@ export class SubMongoChangeService {
           const id = next.documentKey._id;
           const one = await model.findById(id);
           if (!one) return;
+          // TODO:
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           const t = splitword(one);
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-expect-error
