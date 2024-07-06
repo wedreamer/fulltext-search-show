@@ -1,12 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { getConnectionToken } from '@nestjs/mongoose';
-import { AppModule } from 'apps/full-search-show/src/app.module';
 import mongoose, { Connection } from 'mongoose';
 import { Book, BookSchema } from './schema/book.schema';
 import { Cat, CatSchema } from './schema/cat.schema';
+import { MongoModule } from './mongo.module';
 
 const getModels = async () => {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(MongoModule);
   const connect = app.get<Connection>(getConnectionToken());
 
   const bookModel = connect.model(Book.name, BookSchema);
